@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/HUD.uss?fileID=7433441132597879392&amp;guid=35d245143c917a442a51d208cddcf932&amp;type=3#HUD" />
+    <ui:VisualElement name="HUDContainer" class="HUD-container" style="flex-grow: 1;">
+        <ui:VisualElement name="Crosshair" class="crosshair" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

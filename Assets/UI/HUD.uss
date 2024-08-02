@@ -1,0 +1,15 @@
+.crosshair {
+    background-image: url('project://database/Assets/Sprites/obnoxious%20crosshair.png?fileID=2800000&guid=50d72d07bd5942c4c889e4046241034d&type=3#obnoxious crosshair');
+    -unity-background-scale-mode: scale-to-fit;
+    width: 120px;
+    height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+.HUD-container {
+    align-items: center;
+    justify-content: center;
+}
