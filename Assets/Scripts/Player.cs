@@ -24,7 +24,7 @@ public class Player : LivingObject
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Instantiate(bulletPrefab);
+            Instantiate(bulletPrefab, Camera.main.transform.position + Camera.main.transform.forward, Quaternion.identity).SetStartParameters(hit.point, damage, bulletSpeed);
         }
     }
 }
