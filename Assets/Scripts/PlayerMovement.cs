@@ -47,9 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     void AddWalkVector()
     {
+        float stepLength = moveSpeed;
+        if (InputSystem.actions.FindAction("Sprint").inProgress) stepLength *= 2;
         // handle walking movement (horizontal)
-        Vector2 moveInput = moveAction.ReadValue<Vector2>() * moveSpeed;
-        Vector2.ClampMagnitude(moveInput, moveSpeed);
+        Vector2 moveInput = moveAction.ReadValue<Vector2>() * stepLength;
+        Vector2.ClampMagnitude(moveInput, stepLength);
 
         // transform.forward and transform.right are forward/back & left/right motion respectively
         // ~in relation to character rotation
