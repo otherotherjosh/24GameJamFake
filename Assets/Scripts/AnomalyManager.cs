@@ -10,11 +10,11 @@ public class AnomalyManager : MonoBehaviour
     public static AnomalyManager Instance;
 
     //list
-    [SerializeField] private List<Anomaly> anomalies;
+    [SerializeField] private List<Anomaly> anomalies = new List<Anomaly>();
     [SerializeField] private float maxTimeBetweenSpawn;
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private Bullet bulletPrefab;
-    private List<Anomaly> activeAnomalies;
+    private List<Anomaly> activeAnomalies = new List<Anomaly>();
     private float lastSpawnTime;
     private float spawnCooldown;
 
@@ -63,8 +63,8 @@ public class AnomalyManager : MonoBehaviour
     {
         anomalyToEnable.bulletPrefab = bulletPrefab;
         anomalyToEnable.gameObject.SetActive(true);
-        anomalyToEnable.StartAnomaly();
         activeAnomalies.Add(anomalyToEnable);
+        anomalyToEnable.StartAnomaly();
         anomalies.Remove(anomalyToEnable);
     }
 
