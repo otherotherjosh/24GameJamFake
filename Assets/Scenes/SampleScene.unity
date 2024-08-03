@@ -1675,6 +1675,7 @@ GameObject:
   - component: {fileID: 878749402}
   - component: {fileID: 878749403}
   - component: {fileID: 878749404}
+  - component: {fileID: 878749405}
   m_Layer: 0
   m_Name: Brayden (Bathroom Demon)
   m_TagString: Untagged
@@ -1720,6 +1721,7 @@ MonoBehaviour:
   distanceFromPlayer: 5
   followSpeed: 2.5
   rotateSpeed: 0.5
+  XZAngleClamp: 0
 --- !u!136 &878749404
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1743,6 +1745,18 @@ CapsuleCollider:
   m_Height: 1.4
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
+--- !u!114 &878749405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878749401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70194c8c2a4f1d4c87220ee99fb60f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892316341
 GameObject:
   m_ObjectHideFlags: 0
