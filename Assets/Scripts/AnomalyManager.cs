@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class AnomalyManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class AnomalyManager : MonoBehaviour
     [SerializeField] private float maxTimeBetweenSpawn;
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private Bullet bulletPrefab;
+    private List<Anomaly> activeAnomalies;
     private float lastSpawnTime;
     private float spawnCooldown;
 
@@ -35,15 +37,26 @@ public class AnomalyManager : MonoBehaviour
         lastSpawnTime = Time.time;
         int selection = Random.Range(0, anomalies.Count - 1);
         if(anomalies.Count != 0){
-            anomalies[selection].bulletPrefab = bulletPrefab;
-            anomalies[selection].gameObject.SetActive(true);
-            anomalies[selection].StartAnomaly();
-            anomalies.RemoveAt(selection);
-            Debug.Log("spawned a thing");
+            EnableAnomaly(anomalies[selection]);
+            Debug.Log("Enabled en enomaly");
         }
         else
         {
-            Debug.Log("nothing to spawn");
+            Debug.Log("All anomalies have been enabled");
         }
+    }
+
+    public void EnableAnomaly(Anomaly anomalyToEnable)
+    {
+        anomalyToEnable.bulletPrefab = bulletPrefab;
+        anomalyToEnable.gameObject.SetActive(true);
+        anomalyToEnable.StartAnomaly();
+        activeAnomalies.Add(anomalyToEnable);
+        anomalies.Remove(anomalyToEnable);
+    }
+
+    public void DisableAnomaly(Anomaly anomalyToDisable)
+    {
+        activeAnomalies.Remove(anomalyToDisable);
     }
 }

@@ -996,6 +996,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  isEnabled: 0
 --- !u!135 &250012172
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1392,6 +1393,7 @@ MonoBehaviour:
   player: {fileID: 1159957575}
   shootHeightOffset: 2
   bulletPrefab: {fileID: 0}
+  isEnabled: 0
 --- !u!4 &319079968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3271688282589009087, guid: 3f12d772b19ebb948a751830f8828178, type: 3}
@@ -1543,6 +1545,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  isEnabled: 0
 --- !u!135 &323398524
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1755,9 +1758,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1159957575}
     - target: {fileID: 6855547572448889263, guid: 8b60a80abdee0b64b90362d679654488, type: 3}
+      propertyPath: followSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855547572448889263, guid: 8b60a80abdee0b64b90362d679654488, type: 3}
       propertyPath: spawnTransform
       value: 
       objectReference: {fileID: 1114924834}
+    - target: {fileID: 6855547572448889263, guid: 8b60a80abdee0b64b90362d679654488, type: 3}
+      propertyPath: distanceFromPlayer
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8891697725043387860, guid: 8b60a80abdee0b64b90362d679654488, type: 3}
       propertyPath: Loop
       value: 1
@@ -2493,6 +2504,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  isEnabled: 0
 --- !u!135 &706683214
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3274,6 +3286,7 @@ MonoBehaviour:
   player: {fileID: 1159957575}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 0}
+  isEnabled: 0
   originalObject: {fileID: 1110601676}
   anomalousTransform: {fileID: 1547782216}
   transformTime: 4
@@ -4856,6 +4869,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  isEnabled: 0
 --- !u!135 &1171357484
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6482,6 +6496,7 @@ MonoBehaviour:
   player: {fileID: 1159957575}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 0}
+  isEnabled: 0
   normalPaintingImage: {fileID: 2100000, guid: dc88f902a65f647429604f507ccd44b0, type: 2}
   anomalyPaintingImage: {fileID: 2100000, guid: bc6c370f8d22a344c9d25ae69d6cf152, type: 2}
   imageMesh: {fileID: 1259582282}
@@ -7375,6 +7390,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  isEnabled: 0
 --- !u!135 &1562421213
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8506,6 +8522,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  isEnabled: 0
 --- !u!135 &1870152268
 SphereCollider:
   m_ObjectHideFlags: 0
