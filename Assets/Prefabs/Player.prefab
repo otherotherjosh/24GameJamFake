@@ -67,6 +67,8 @@ MonoBehaviour:
   moveSpeed: 5
   crouchDepth: 0.514
   crouchSpeed: 8.77
+  jumpForce: 0
+  jumpTimeWindow: 0
 --- !u!143 &4496438269360216504
 CharacterController:
   m_ObjectHideFlags: 0
@@ -105,6 +107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ba002a36df364b8185422db81bde3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage: 10
+  fireRate: 5
+  bulletSpeed: 10
+  bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!1 &3103663510848858061
 GameObject:
   m_ObjectHideFlags: 0

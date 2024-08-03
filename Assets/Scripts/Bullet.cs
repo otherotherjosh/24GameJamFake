@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
         StepToPosition();
     }
 
-    private void SetStartParameters(Vector3 targetPosition, float damage, float bulletSpeed)
+    public void SetStartParameters(Vector3 targetPosition, float damage, float bulletSpeed)
     {
         this.targetPosition = targetPosition;
         this.damage = damage;
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     private void StepToPosition()
     {
-        Vector3.MoveTowards(transform.position, targetPosition, bulletSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, bulletSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,6 +32,12 @@ public class Bullet : MonoBehaviour
         if (livingObject != null)
         {
             livingObject.Health -= Mathf.RoundToInt(damage);
+            Debug.Log("hit something with health");
+        }
+        else
+        {
+            Debug.Log("miss");
+            Destroy(gameObject);
         }
     }
 }
