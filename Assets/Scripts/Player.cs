@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Player : LivingObject
 {
+    [SerializeField] private Bullet bulletPrefab;
+
     private void Start()
     {
         OnDie.AddListener(OnDeath);
@@ -18,6 +20,11 @@ public class Player : LivingObject
 
     private void Gun()
     {
-        Debug.Log("GUN");
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Instantiate(bulletPrefab);
+        }
     }
 }
