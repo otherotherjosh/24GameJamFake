@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Anomaly : LivingObject
 {
+    [SerializeField] private Vector3 playerPos;
+    [SerializeField] private Bullet bulletPrefab;
+    private Bullet currentBullet;
     private void Start()
     {
         OnDie.AddListener(OnDeath);
@@ -12,6 +15,12 @@ public class Anomaly : LivingObject
     private void OnDeath()
     {
 
+    }
+
+    protected void ShootPlayer()
+    {
+        currentBullet = Instantiate(bulletPrefab, transform);
+        currentBullet.SetStartParameters(playerPos, damage, bulletSpeed);
     }
 
     /// <summary>
