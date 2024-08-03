@@ -8,7 +8,6 @@ public class Player : LivingObject
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject bulletHolePrefab;
     [SerializeField] private int maxBulletHoles;
-    [SerializeField] private Transform bulletHolesParent;
 
     private GameObject[] bulletHoles;
     private int bulletHolesIndex;
@@ -66,6 +65,7 @@ public class Player : LivingObject
         bulletHoles[bulletHolesIndex].transform.position = hit.point;
         bulletHoles[bulletHolesIndex].transform.up = hit.normal;
         bulletHoles[bulletHolesIndex].SetActive(true);
+        bulletHoles[bulletHolesIndex].transform.parent = hit.transform;
         bulletHolesIndex++;
     }
 
@@ -74,7 +74,7 @@ public class Player : LivingObject
         bulletHoles = new GameObject[maxBulletHoles];
         for (int i = 0; i < maxBulletHoles; i++)
         {
-            bulletHoles[i] = Instantiate(bulletHolePrefab, bulletHolesParent);
+            bulletHoles[i] = Instantiate(bulletHolePrefab, transform);
             bulletHoles[i].SetActive(false);
         }
     }
