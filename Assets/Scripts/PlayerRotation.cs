@@ -12,15 +12,15 @@ public class PlayerRotation : MonoBehaviour
     [SerializeField][Range(0, 0.4f)] float lookSensitivity;
     [SerializeField][Range(0.5f, 1)] float verticalModifier;
     [SerializeField] bool lockCursor;
+    private Transform cam;
     private InputAction lookAction;
-    private Camera cam;
     private float yaw;
 
     void Awake()
     {
         Cursor.lockState = lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
         
-        cam = GetComponentInChildren<Camera>();
+        cam = GetComponentInChildren<Camera>().transform;
     }
 
     void Start()
@@ -38,6 +38,6 @@ public class PlayerRotation : MonoBehaviour
         // rotate camera vertically (around the X axis) with clamp
         yaw += -lookInput.y * verticalModifier;
         yaw = Mathf.Clamp(yaw, -maxYaw, maxYaw);
-        cam.transform.localRotation = Quaternion.Euler(yaw, 0, 0);
+        cam.localRotation = Quaternion.Euler(yaw, 0, 0);
     }
 }
