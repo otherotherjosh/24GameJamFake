@@ -5610,7 +5610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anomalies:
-  - {fileID: 807662862}
   - {fileID: 1724509720792745345}
   - {fileID: 1360287493}
   - {fileID: 648110260}
@@ -6045,6 +6044,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3068263451245931646, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536267653372172560, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: gunshotVariation
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6064358372453876376, guid: a712292aa890ba740be11a7c840504ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.52
@@ -6113,7 +6120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af98e7a0051183f4eb3773819f16a91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSteps: 0.292
+  timeBetweenSteps: 0.532
+  pitchVariation: 0.196
+  sprintVolumeBoost: 0.2
   footsteps:
   - {fileID: 8300000, guid: 6da4b60ddce97d046ad96f284b137daa, type: 3}
   - {fileID: 8300000, guid: 3ea820da4b7e8c64490350977253e134, type: 3}
@@ -6131,8 +6140,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9477,6 +9486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5911404237484000339}
   - component: {fileID: 5911404237484000340}
+  - component: {fileID: 5911404237484000341}
   m_Layer: 0
   m_Name: SkibidiGoblin
   m_TagString: Untagged
@@ -9728,6 +9738,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39704898, y: 0.44237196, z: 0.67270446}
   m_Center: {x: 0.009217203, y: -0.27881402, z: 0.07805297}
+--- !u!65 &5911404237484000341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5909827921406810813}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.54, y: 0.43, z: 0.24}
+  m_Center: {x: 0, y: 0.16, z: -0.13}
 --- !u!4 &5911424301308846377
 Transform:
   m_ObjectHideFlags: 0
