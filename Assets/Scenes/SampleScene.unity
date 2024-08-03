@@ -2528,9 +2528,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6181477438106354076, guid: a712292aa890ba740be11a7c840504ce, type: 3}
-      propertyPath: lookSensitivity
-      value: 0.069
+    - target: {fileID: 6386847648168054992, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: jumpForce
+      value: 4.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386847648168054992, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: jumpTimeWindow
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

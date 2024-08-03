@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField][Range(0.1f, 2)] private float crouchDepth;
     [SerializeField][Range(0.1f, 20)] private float crouchSpeed;
+    [SerializeField][Range(1, 5)] private float jumpForce;
+    [SerializeField][Range(0.1f, 1)] private float jumpTimeWindow;
 
     private CharacterController cc;
     private InputAction moveAction;
@@ -17,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private float standHeight;
     private float cameraTargetHeight;
     private Camera cam;
+    private float jumpInputTime;
 
     void Awake()
     {
@@ -25,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
         standHeight = cam.transform.localPosition.y;
         cameraTargetHeight = standHeight;
+
+        jumpInputTime = -Mathf.Infinity;
     }
 
     void Start()
@@ -33,13 +39,15 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         // add listener to crouch event
         InputSystem.actions.FindAction("Crouch").performed += ctx => HandleCrouchInput();
+        // add listener to jump event
+        InputSystem.actions.FindAction("Jump").performed += ctx => HandleJumpInput();
     }
 
     void Update()
     {
         AddWalkVector();
         AddGravityVector();
-
+        AddJumpVector();
         cc.Move(moveVector * Time.deltaTime);
 
         MoveCameraWithCrouch();
@@ -68,6 +76,19 @@ public class PlayerMovement : MonoBehaviour
             moveVector += Physics.gravity * Time.deltaTime;
     }
 
+    void AddJumpVector()
+    {
+        if (Time.time > jumpInputTime + jumpTimeWindow) return;
+        if (!cc.isGrounded)
+        {
+            Debug.Log("Cannot jump - not grounded");
+            return;
+        }
+        Debug.Log("Jumped!!");
+        jumpInputTime = -Mathf.Infinity;
+        moveVector.y = jumpForce;
+    }
+
     void MoveCameraWithCrouch()
     {
         // move camera towards target (crouched or standing) height, with an exponential ease
@@ -84,5 +105,10 @@ public class PlayerMovement : MonoBehaviour
             cameraTargetHeight = standHeight - crouchDepth;
         else
             cameraTargetHeight = standHeight;
+    }
+
+    void HandleJumpInput()
+    {
+        jumpInputTime = Time.time;
     }
 }
