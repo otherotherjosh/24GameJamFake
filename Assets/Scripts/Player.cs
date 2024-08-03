@@ -7,6 +7,16 @@ public class Player : LivingObject
 {
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Camera playerCamera;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip gunshot;
+    [SerializeField][Range(0,0.1f)] private float gunshotVariation;
+
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -21,6 +31,9 @@ public class Player : LivingObject
 
     private void Gun()
     {
+        audioSource.pitch = Random.Range(1 - gunshotVariation / 2, 1 + gunshotVariation / 2);
+        audioSource.PlayOneShot(gunshot);
+
         RaycastHit hit;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
