@@ -40,7 +40,7 @@ public class Player : LivingObject
             //Debug.DrawRay(transform.position, transform.TransformDirection(playerCamera.transform.forward) * hit.distance, Color.yellow);
             //Instantiate(bulletPrefab, playerCamera.transform.position + playerCamera.transform.forward, Quaternion.identity).SetStartParameters(hit.point, damage, bulletSpeed);
 
-            LivingObject livingObject = hit.transform.GetComponent<LivingObject>();
+            LivingObject livingObject = hit.transform.GetComponentInParent<LivingObject>();
             if (livingObject != null)
             {
                 livingObject.Health -= damage;

@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        LivingObject livingObject = collision.gameObject.GetComponent<LivingObject>();
+        LivingObject livingObject = collision.gameObject.GetComponentInParent<LivingObject>();
 
         if (livingObject != null)
         {
