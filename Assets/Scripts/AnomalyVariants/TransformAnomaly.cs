@@ -26,11 +26,10 @@ public class TransformAnomaly : Anomaly
 
     void TransformOverTime(Vector3 position, Quaternion rotation, Vector3 scale, float time)
     {
-        isTransforming = true;
         dupeObject.transform.DOMove(position, time).SetEase(ease);
         dupeObject.transform.DORotate(rotation.eulerAngles, time).SetEase(ease);
         dupeObject.transform.DOScale(scale, time).SetEase(ease)
-        .onComplete = () => isTransforming = false;
+        .onComplete = () => { if (isTransforming) isTransforming = false; };
     }
 
     protected override void OnDeath()
@@ -38,6 +37,7 @@ public class TransformAnomaly : Anomaly
 
     IEnumerator Die()
     {
+        isTransforming = true;
         TransformOverTime(
             originalObject.transform.position,
             originalObject.transform.rotation,
