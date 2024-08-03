@@ -10,7 +10,6 @@ public class FollowAnomaly : Anomaly
     [SerializeField] private float distanceFromPlayer;
     [SerializeField] private float followSpeed;
     [SerializeField] private float rotateSpeed;
-    [SerializeField] private float XZAngleClamp;
     [SerializeField] private LayerMask rayIgnoreMask;
 
     public override void AnomalyBehaviour()
@@ -32,7 +31,7 @@ public class FollowAnomaly : Anomaly
                 transform.LookAt(player.transform.position);
 
                 Vector3 eulerAngles = transform.eulerAngles;
-                transform.rotation = Quaternion.Euler(new Vector3(Mathf.Clamp(eulerAngles.x, -XZAngleClamp, XZAngleClamp), eulerAngles.y, Mathf.Clamp(eulerAngles.z, -XZAngleClamp, XZAngleClamp)));
+                transform.rotation = Quaternion.Euler(new Vector3(0, eulerAngles.y, 0));
 
                 if (distance > distanceFromPlayer)
                 {

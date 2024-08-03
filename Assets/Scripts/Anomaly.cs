@@ -5,6 +5,7 @@ using UnityEngine;
 public class Anomaly : LivingObject
 {
     [SerializeField] protected GameObject player;
+    [SerializeField] private float shootHeightOffset;
     [HideInInspector] public Bullet bulletPrefab;
     private Bullet currentBullet;
     protected bool isEnabled;
@@ -40,8 +41,10 @@ public class Anomaly : LivingObject
 
     protected void ShootPlayer()
     {
-        currentBullet = Instantiate(bulletPrefab, transform);
-        currentBullet.SetStartParameters(player.transform.position + new Vector3(0, 1, 0), damage, bulletSpeed);
+        Vector3 shootPosition = new Vector3(transform.position.x, transform.position.y + shootHeightOffset, transform.position.z);
+
+        currentBullet = Instantiate(bulletPrefab, shootPosition, Quaternion.identity);
+        currentBullet.SetStartParameters(gameObject, player.transform.position + (player.transform.position - shootPosition) * 20, damage, bulletSpeed);
     }
 
     /// <summary>

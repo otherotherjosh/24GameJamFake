@@ -111,9 +111,11 @@ MonoBehaviour:
   maxHealth: 100
   damage: 10
   fireRate: 5
-  bulletSpeed: 10
-  bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
+  bulletSpeed: 80
   playerCamera: {fileID: 6208913853307529671}
+  bulletHolePrefab: {fileID: 4463130769545343402, guid: 00cf8317a57725f4f8fa8d991753370d, type: 3}
+  maxBulletHoles: 32
+  bulletHolesParent: {fileID: 0}
   gunshot: {fileID: 8300000, guid: c59c7506c5feca841b693b6615c9ef2a, type: 3}
   gunshotVariation: 0.044
 --- !u!82 &3068263451245931646
@@ -258,7 +260,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.1986917, g: 0.29385456, b: 0.4433962, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
