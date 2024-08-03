@@ -8697,6 +8697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChristianPainting
       objectReference: {fileID: 0}
+    - target: {fileID: 4356519748554948051, guid: 16c79a63456e255468ecb718c100a732, type: 3}
+      propertyPath: MinDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5022762354710250486, guid: 16c79a63456e255468ecb718c100a732, type: 3}
       propertyPath: player
       value: 
