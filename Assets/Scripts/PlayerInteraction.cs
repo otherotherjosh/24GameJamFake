@@ -64,8 +64,8 @@ public class PlayerInteraction : MonoBehaviour
     // Sets the various interaction texts, uses polymorphism to not have to write out all variables when not needed
     private void SetInteractionText(string title = "", string description = "", string button = "")
     {
-        interactionTextTitle.text = title;
-        interactionTextDescription.text = description;
-        interactionTextButton.text = button;
+        //interactionTextTitle.text = title;
+        //interactionTextDescription.text = description;
+        //interactionTextButton.text = button;
     }
 }

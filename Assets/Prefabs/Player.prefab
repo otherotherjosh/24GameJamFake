@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6181477438106354076}
   - component: {fileID: 6386847648168054992}
   - component: {fileID: 4496438269360216504}
+  - component: {fileID: 3536267653372172560}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxYaw: 90
-  lookSensitivity: 20.4
+  lookSensitivity: 0.069
   verticalModifier: 0.611
   lockCursor: 1
 --- !u!114 &6386847648168054992
@@ -66,7 +67,6 @@ MonoBehaviour:
   moveSpeed: 5
   crouchDepth: 0.514
   crouchSpeed: 8.77
-  spawnpoint: {fileID: 0}
 --- !u!143 &4496438269360216504
 CharacterController:
   m_ObjectHideFlags: 0
@@ -93,6 +93,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3536267653372172560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893661565376030556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ba002a36df364b8185422db81bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3103663510848858061
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,4 +21,3 @@ public abstract class LivingObject : MonoBehaviour
     private int maxHealth;
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
 }
-
