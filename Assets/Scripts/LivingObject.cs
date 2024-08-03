@@ -8,16 +8,19 @@ public abstract class LivingObject : MonoBehaviour
     protected UnityEvent OnDie = new UnityEvent();
 
     private int health;
+
     public int Health {
         get => health;
         set {
-            health = Mathf.Clamp(value, 0, MaxHealth);
+            health = Mathf.Clamp(value, 0, maxHealth);
             if (health == 0)
             {
                 OnDie?.Invoke();
             }
         }
     }
-    private int maxHealth;
-    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+
+    [SerializeField] protected int maxHealth;
+    [SerializeField] protected int damage;
+    [SerializeField] protected int fireRate;
 }
