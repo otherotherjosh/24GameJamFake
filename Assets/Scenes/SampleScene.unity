@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &250012171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  fireRate: 0
 --- !u!135 &250012172
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -793,7 +796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &323398523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  fireRate: 0
 --- !u!135 &323398524
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1220,7 +1226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &706683213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,6 +1239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  fireRate: 0
 --- !u!135 &706683214
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1850,7 +1859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1171357483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,6 +1872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  fireRate: 0
 --- !u!135 &1171357484
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2698,7 +2710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1562421212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,6 +2723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  fireRate: 0
 --- !u!135 &1562421213
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3225,7 +3240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1870152267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3238,6 +3253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  fireRate: 0
 --- !u!135 &1870152268
 SphereCollider:
   m_ObjectHideFlags: 0
