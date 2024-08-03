@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Player : LivingObject
 {
-    [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Camera playerCamera;
     [Header("Sounds")]
     [SerializeField] private AudioClip gunshot;
@@ -22,6 +21,7 @@ public class Player : LivingObject
     {
         OnDie.AddListener(OnDeath);
         InputSystem.actions.FindAction("Gun").performed += ctx => Gun();
+        Health = maxHealth;
     }
 
     private void OnDeath()
@@ -38,7 +38,13 @@ public class Player : LivingObject
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             //Debug.DrawRay(transform.position, transform.TransformDirection(playerCamera.transform.forward) * hit.distance, Color.yellow);
-            Instantiate(bulletPrefab, playerCamera.transform.position + playerCamera.transform.forward, Quaternion.identity).SetStartParameters(hit.point, damage, bulletSpeed);
+            //Instantiate(bulletPrefab, playerCamera.transform.position + playerCamera.transform.forward, Quaternion.identity).SetStartParameters(hit.point, damage, bulletSpeed);
+
+            LivingObject livingObject = hit.transform.GetComponent<LivingObject>();
+            if (livingObject != null)
+            {
+                livingObject.Health -= damage;
+            }
         }
     }
 }

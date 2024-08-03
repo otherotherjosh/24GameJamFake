@@ -16,11 +16,14 @@ public class Anomaly : LivingObject
     private void OnDeath()
     {
         isEnabled = false;
+        gameObject.SetActive(false);
+        StopCoroutine(ShootLoop());
     }
 
     public void StartAnomaly()
     {
         isEnabled = true;
+        Health = maxHealth;
 
         AnomalyBehaviour();
         StartCoroutine(ShootLoop());
