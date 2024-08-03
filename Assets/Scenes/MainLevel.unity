@@ -1885,12 +1885,12 @@ GameObject:
   m_Component:
   - component: {fileID: 717922185}
   m_Layer: 0
-  m_Name: House
+  m_Name: OldHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &717922185
 Transform:
   m_ObjectHideFlags: 0
@@ -2455,7 +2455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1562499875460225213, guid: d6e2c8bf9837afb43aaf81d2205c950c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.68
+      value: -26.02
       objectReference: {fileID: 0}
     - target: {fileID: 1562499875460225213, guid: d6e2c8bf9837afb43aaf81d2205c950c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5876,7 +5876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1562499875460225213, guid: d6e2c8bf9837afb43aaf81d2205c950c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.06
+      value: -29.0601
       objectReference: {fileID: 0}
     - target: {fileID: 1562499875460225213, guid: d6e2c8bf9837afb43aaf81d2205c950c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7075,9 +7075,9 @@ SceneRoots:
   - {fileID: 1110601680}
   - {fileID: 1360620659}
   - {fileID: 717922185}
+  - {fileID: 1528771661}
   - {fileID: 1203559433}
   - {fileID: 892316342}
   - {fileID: 1311740732}
   - {fileID: 1311784921}
   - {fileID: 1665596072}
-  - {fileID: 1528771661}
