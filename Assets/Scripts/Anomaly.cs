@@ -7,6 +7,7 @@ public class Anomaly : LivingObject
     [SerializeField] private Vector3 playerPos;
     [SerializeField] private Bullet bulletPrefab;
     private Bullet currentBullet;
+    private bool isEnabled;
     private void Start()
     {
         OnDie.AddListener(OnDeath);
@@ -14,7 +15,24 @@ public class Anomaly : LivingObject
 
     private void OnDeath()
     {
+        isEnabled = false;
+    }
 
+    public void StartAnomaly()
+    {
+        isEnabled = true;
+
+        AnomalyBehaviour();
+        StartCoroutine(ShootLoop());
+    }
+
+    private IEnumerator ShootLoop()
+    {
+        while (isEnabled)
+        {
+            yield return new WaitForSeconds(fireRate);
+            ShootPlayer();
+        }
     }
 
     protected void ShootPlayer()

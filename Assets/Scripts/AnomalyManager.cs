@@ -35,6 +35,7 @@ public class AnomalyManager : MonoBehaviour
         int selection = Random.Range(0, anomalies.Count - 1);
         if(anomalies.Count != 0){
             anomalies[selection].gameObject.SetActive(true);
+            anomalies[selection].StartAnomaly();
             anomalies.RemoveAt(selection);
             Debug.Log("spawned a thing");
         }

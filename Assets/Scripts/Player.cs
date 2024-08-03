@@ -21,9 +21,9 @@ public class Player : LivingObject
     private void Gun()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Camera.main.transform.forward), out hit, Mathf.Infinity))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Camera.main.transform.forward) * hit.distance, Color.yellow);
             Instantiate(bulletPrefab, Camera.main.transform.position + Camera.main.transform.forward, Quaternion.identity).SetStartParameters(hit.point, damage, bulletSpeed);
         }
     }
