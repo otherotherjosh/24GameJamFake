@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class AnomalyManager : MonoBehaviour
 {
+    public static AnomalyManager Instance;
+
     //list
     [SerializeField] private List<Anomaly> anomalies;
     [SerializeField] private float maxTimeBetweenSpawn;
@@ -15,6 +17,17 @@ public class AnomalyManager : MonoBehaviour
     private List<Anomaly> activeAnomalies;
     private float lastSpawnTime;
     private float spawnCooldown;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+    }
 
     void Start()
     {

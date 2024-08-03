@@ -16,6 +16,7 @@ public class Anomaly : LivingObject
 
     protected virtual void OnDeath()
     {
+        AnomalyManager.Instance.DisableAnomaly(this);
         isEnabled = false;
         gameObject.SetActive(false);
         StopCoroutine(ShootLoop());
