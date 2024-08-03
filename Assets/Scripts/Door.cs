@@ -6,40 +6,38 @@ public class Door : InteractableObject
     [SerializeField] private Transform openTransform;
     [SerializeField] private float timeToOpen;
     [SerializeField] private Ease ease;
-    private Quaternion closedRotation;
-    private Quaternion openRotation;
+    [SerializeField] private float openDegrees;
     private bool doorIsOpen;
-    private BoxCollider boxCollider;
+    [HideInInspector] public int rotationDirection;
+    private Transform playerTransform;
 
     void Awake()
     {
         doorIsOpen = false;
-        openRotation = openTransform.rotation;
-        closedRotation = transform.rotation;
-        boxCollider = GetComponent<BoxCollider>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
     public override void Interact()
     {
-        boxCollider.enabled = false;
-        if (doorIsOpen)
-        {
-            Debug.Log("door closing");
-            transform.DORotateQuaternion(closedRotation, timeToOpen).SetEase(ease)
-                .onComplete = () => EnableCollider(closedRotation);
-        }
-        else
-        {
-            Debug.Log("door is opening!!");
-            transform.DORotateQuaternion(openRotation, timeToOpen).SetEase(ease)
-                .onComplete = () => EnableCollider(openRotation);
-        }          
+        Debug.Log($"door open? {doorIsOpen}, rotation direction? {rotationDirection}");
+        float targetRotation = doorIsOpen ? 0 : openDegrees * rotationDirection;
+        transform.DOLocalRotate(new Vector3(
+            0, targetRotation, 0
+        ), 
+        timeToOpen).SetEase(ease)
+            .onComplete = () => EnableCollider(targetRotation);
         doorIsOpen = !doorIsOpen;
     }
 
-    void EnableCollider(Quaternion targetRotation)
+    void EnableCollider(float targetRotation)
     {
-        if (transform.rotation == targetRotation)
-            boxCollider.enabled = true;
+        if (targetRotation < 0) targetRotation += 360;
+        Debug.Log(string.Format("target rotation: {0}, rotation: {1}",
+            targetRotation, transform.localRotation.eulerAngles.y
+        ));
+        if (Mathf.Round(transform.localRotation.eulerAngles.y) == targetRotation)
+        {
+            Debug.Log("target rotation and rotation are the same!!");
+        }
     }
 }

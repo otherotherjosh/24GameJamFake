@@ -15,6 +15,7 @@ public class AnomalyManager : MonoBehaviour
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private Bullet bulletPrefab;
     private List<Anomaly> activeAnomalies;
+    [SerializeField] private float initialGracePeriod;
     private float lastSpawnTime;
     private float spawnCooldown;
 
@@ -32,7 +33,7 @@ public class AnomalyManager : MonoBehaviour
     void Start()
     {
         lastSpawnTime = Time.time;
-        spawnCooldown = Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);
+        spawnCooldown = initialGracePeriod;
     }
 
     void Update()
