@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class FollowAnomaly : Anomaly
@@ -10,10 +11,12 @@ public class FollowAnomaly : Anomaly
     [SerializeField] private float followSpeed;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float XZAngleClamp;
+    [SerializeField] private LayerMask rayIgnoreMask;
 
     public override void AnomalyBehaviour()
     {
         StartCoroutine(FollowPlayer());
+        transform.position = spawnTransform.position;
     }
 
     private IEnumerator FollowPlayer()
@@ -22,7 +25,7 @@ public class FollowAnomaly : Anomaly
         { 
             yield return null;
 
-            if (!Physics.Linecast(transform.position, player.transform.position))
+            if (!Physics.Linecast(transform.position + new Vector3(0, 1, 0), player.transform.position + new Vector3(0, 1, 0), ~rayIgnoreMask))
             {
                 float distance = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(player.transform.position.x, player.transform.position.z));
 
@@ -43,6 +46,6 @@ public class FollowAnomaly : Anomaly
     {
         base.OnDeath();
 
-        // GO back to start position
+        transform.position = spawnTransform.position;
     }
 }
