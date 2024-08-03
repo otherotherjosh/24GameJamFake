@@ -23,4 +23,5 @@ public abstract class LivingObject : MonoBehaviour
     [SerializeField] protected int maxHealth;
     [SerializeField] protected int damage;
     [SerializeField] protected int fireRate;
+    [SerializeField] protected float bulletSpeed;
 }
