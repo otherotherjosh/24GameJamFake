@@ -5,7 +5,7 @@ using UnityEngine;
 public class Anomaly : LivingObject
 {
     [SerializeField] private Vector3 playerPos;
-    [SerializeField] private Bullet bulletPrefab;
+    [HideInInspector] public Bullet bulletPrefab;
     private Bullet currentBullet;
     private bool isEnabled;
     private void Start()
@@ -13,7 +13,7 @@ public class Anomaly : LivingObject
         OnDie.AddListener(OnDeath);
     }
 
-    private void OnDeath()
+    protected virtual void OnDeath()
     {
         isEnabled = false;
         gameObject.SetActive(false);

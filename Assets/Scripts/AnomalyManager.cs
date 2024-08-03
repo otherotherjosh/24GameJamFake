@@ -10,6 +10,7 @@ public class AnomalyManager : MonoBehaviour
     [SerializeField] private List<Anomaly> anomalies;
     [SerializeField] private float maxTimeBetweenSpawn;
     [SerializeField] private float minTimeBetweenSpawn;
+    [SerializeField] private Bullet bulletPrefab;
     private float lastSpawnTime;
     private float spawnCooldown;
 
@@ -34,6 +35,7 @@ public class AnomalyManager : MonoBehaviour
         lastSpawnTime = Time.time;
         int selection = Random.Range(0, anomalies.Count - 1);
         if(anomalies.Count != 0){
+            anomalies[selection].bulletPrefab = bulletPrefab;
             anomalies[selection].gameObject.SetActive(true);
             anomalies[selection].StartAnomaly();
             anomalies.RemoveAt(selection);
