@@ -1,18 +1,15 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DOTweenHover : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float distance;
+    [SerializeField] private float hoverSpeed;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.DOLocalMoveY(distance, hoverSpeed).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 }
