@@ -6,15 +6,23 @@ using UnityEngine.InputSystem;
 public class Player : LivingObject
 {
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private GameObject bulletHolePrefab;
+    [SerializeField] private int maxBulletHoles;
+    [SerializeField] private Transform bulletHolesParent;
+
+    private GameObject[] bulletHoles;
+    private int bulletHolesIndex;
+
     [Header("Sounds")]
     [SerializeField] private AudioClip gunshot;
-    [SerializeField][Range(0,0.1f)] private float gunshotVariation;
+    [SerializeField][Range(0, 0.1f)] private float gunshotVariation;
 
     private AudioSource audioSource;
 
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        InstantiateBulletHoles();
     }
 
     private void Start()
@@ -45,6 +53,29 @@ public class Player : LivingObject
             {
                 livingObject.Health -= damage;
             }
+            else
+            {
+                PlantBulletHole(hit);
+            }
+        }
+    }
+
+    void PlantBulletHole(RaycastHit hit)
+    {
+        bulletHolesIndex %= maxBulletHoles;
+        bulletHoles[bulletHolesIndex].transform.position = hit.point;
+        bulletHoles[bulletHolesIndex].transform.up = hit.normal;
+        bulletHoles[bulletHolesIndex].SetActive(true);
+        bulletHolesIndex++;
+    }
+
+    void InstantiateBulletHoles()
+    {
+        bulletHoles = new GameObject[maxBulletHoles];
+        for (int i = 0; i < maxBulletHoles; i++)
+        {
+            bulletHoles[i] = Instantiate(bulletHolePrefab, bulletHolesParent);
+            bulletHoles[i].SetActive(false);
         }
     }
 }
