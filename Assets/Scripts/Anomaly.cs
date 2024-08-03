@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Anomaly : LivingObject
 {
-    [SerializeField] private Vector3 playerPos;
+    [SerializeField] protected GameObject player;
     [HideInInspector] public Bullet bulletPrefab;
     private Bullet currentBullet;
-    private bool isEnabled;
+    protected bool isEnabled;
     private void Start()
     {
         OnDie.AddListener(OnDeath);
@@ -41,7 +41,7 @@ public class Anomaly : LivingObject
     protected void ShootPlayer()
     {
         currentBullet = Instantiate(bulletPrefab, transform);
-        currentBullet.SetStartParameters(playerPos, damage, bulletSpeed);
+        currentBullet.SetStartParameters(player.transform.position + new Vector3(0, 1, 0), damage, bulletSpeed);
     }
 
     /// <summary>
