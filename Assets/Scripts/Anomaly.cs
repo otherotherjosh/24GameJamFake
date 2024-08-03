@@ -41,6 +41,8 @@ public class Anomaly : LivingObject
 
     protected void ShootPlayer()
     {
+        Debug.LogWarning($"{gameObject} <- Shoot");
+
         Vector3 shootPosition = new Vector3(transform.position.x, transform.position.y + shootHeightOffset, transform.position.z);
 
         currentBullet = Instantiate(bulletPrefab, shootPosition, Quaternion.identity);
