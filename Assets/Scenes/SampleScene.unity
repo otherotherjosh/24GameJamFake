@@ -482,6 +482,7 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!135 &250012172
 SphereCollider:
@@ -822,6 +823,7 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!135 &323398524
 SphereCollider:
@@ -1318,6 +1320,7 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!135 &706683214
 SphereCollider:
@@ -1707,6 +1710,7 @@ MonoBehaviour:
   fireRate: 5
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 0}
   originalObject: {fileID: 1110601676}
   anomalousTransform: {fileID: 1547782216}
@@ -1832,15 +1836,15 @@ MonoBehaviour:
   fireRate: 10
   bulletSpeed: 20
   player: {fileID: 1159957575}
+  shootHeightOffset: 1
   bulletPrefab: {fileID: 0}
   spawnTransform: {fileID: 1114924834}
   distanceFromPlayer: 5
   followSpeed: 2.5
   rotateSpeed: 0.5
-  XZAngleClamp: 0
   rayIgnoreMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!136 &878749404
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1876,6 +1880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70194c8c2a4f1d4c87220ee99fb60f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0.15
+  hoverSpeed: 1.5
 --- !u!1 &892316341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2152,7 @@ Transform:
   m_GameObject: {fileID: 1114924833}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.982, y: 0, z: -6.981}
+  m_LocalPosition: {x: 22.629, y: 0, z: -6.563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2302,6 +2308,7 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!135 &1171357484
 SphereCollider:
@@ -3008,6 +3015,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6208913853307529671, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3219,6 +3230,7 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!135 &1562421213
 SphereCollider:
@@ -3809,6 +3821,7 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   player: {fileID: 0}
+  shootHeightOffset: 0
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
 --- !u!135 &1870152268
 SphereCollider:
