@@ -32,12 +32,13 @@ public class Bullet : MonoBehaviour
         if (livingObject != null)
         {
             livingObject.Health -= Mathf.RoundToInt(damage);
-            Debug.Log("hit something with health");
+            Debug.Log($"hit something with health health is now {livingObject.Health}");
         }
         else
         {
             Debug.Log("miss");
-            Destroy(gameObject);
         }
+
+        Destroy(gameObject);
     }
 }
