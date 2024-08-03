@@ -8,7 +8,7 @@ public class Anomaly : LivingObject
     [SerializeField] private float shootHeightOffset;
     [HideInInspector] public Bullet bulletPrefab;
     private Bullet currentBullet;
-    protected bool isEnabled;
+    public bool isEnabled;
     private void Start()
     {
         OnDie.AddListener(OnDeath);

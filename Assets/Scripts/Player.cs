@@ -50,7 +50,23 @@ public class Player : LivingObject
             LivingObject livingObject = hit.transform.GetComponentInParent<LivingObject>();
             if (livingObject != null)
             {
-                livingObject.Health -= damage;
+                try
+                {
+                    Anomaly bob = ((Anomaly)livingObject);
+
+                    if (bob.isEnabled)
+                    {
+                        livingObject.Health -= damage;
+                    }
+                    else
+                    {
+                        PlantBulletHole(hit);
+                    }
+                }
+                catch
+                {
+                    livingObject.Health -= damage;
+                }
             }
             else
             {
