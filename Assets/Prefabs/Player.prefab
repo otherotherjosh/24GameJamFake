@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &468303851906211273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201518265253121368}
+  m_Layer: 0
+  m_Name: Footsteps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1201518265253121368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468303851906211273}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.34271717, y: 12.092171, z: 5.731674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6064358372453876376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2893661565376030556
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 919820447903404100}
+  - {fileID: 1201518265253121368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6181477438106354076
@@ -115,7 +147,6 @@ MonoBehaviour:
   playerCamera: {fileID: 6208913853307529671}
   bulletHolePrefab: {fileID: 4463130769545343402, guid: 00cf8317a57725f4f8fa8d991753370d, type: 3}
   maxBulletHoles: 32
-  bulletHolesParent: {fileID: 0}
   gunshot: {fileID: 8300000, guid: c59c7506c5feca841b693b6615c9ef2a, type: 3}
   gunshotVariation: 0.044
 --- !u!82 &3068263451245931646
@@ -131,7 +162,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.605
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -321,10 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b0ab0bb493ca74183f96f1dc08927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 5
-  interactionTextTitle: {fileID: 0}
-  interactionTextDescription: {fileID: 0}
-  interactionTextButton: {fileID: 0}
+  interactionDistance: 2
 --- !u!1 &3226304405040356737
 GameObject:
   m_ObjectHideFlags: 0
