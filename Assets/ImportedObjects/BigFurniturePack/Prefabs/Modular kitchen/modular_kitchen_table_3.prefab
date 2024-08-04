@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400000}
+  - component: {fileID: 7676030775234384684}
   m_Layer: 0
   m_Name: modular_kitchen_table_3
   m_TagString: Untagged
@@ -36,6 +37,27 @@ Transform:
   - {fileID: 400006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7676030775234384684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.58679247, y: 0.52122575, z: 0.8394321}
+  m_Center: {x: 0.017714977, y: -0.0028454363, z: 0.43547353}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
