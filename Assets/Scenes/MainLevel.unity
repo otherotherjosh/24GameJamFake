@@ -6211,7 +6211,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
   shootSound: {fileID: 0}
   initialGracePeriod: 0
-  anomalyLoseCount: 5
+  anomalyLoseCount: 1000000000
 --- !u!4 &1311784921
 Transform:
   m_ObjectHideFlags: 0
@@ -9272,6 +9272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarElementName: HealthBar
   player: {fileID: 1159957577}
+  healthBarBackgroundColour: {r: 0, g: 0, b: 0, a: 0}
+  healthBarProgressColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &2071763837
 PrefabInstance:
   m_ObjectHideFlags: 0
