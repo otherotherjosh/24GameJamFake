@@ -47,7 +47,7 @@ public class PlayerGun : MonoBehaviour
         if (!Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, Mathf.Infinity))
             return;
 
-        Anomaly anomaly = hit.transform.GetComponent<Anomaly>();
+        Anomaly anomaly = hit.transform.GetComponentInParent<Anomaly>();
         if (anomaly == null)
         {
             PlantBulletHole(hit);
