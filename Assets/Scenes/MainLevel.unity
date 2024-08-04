@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -3916,7 +3916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -9725,10 +9725,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4413546690035283137, guid: a712292aa890ba740be11a7c840504ce, type: 3}
-      propertyPath: scaleVariation
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6064358372453876376, guid: a712292aa890ba740be11a7c840504ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.389
@@ -9769,9 +9765,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6208913853307529671, guid: a712292aa890ba740be11a7c840504ce, type: 3}
-      propertyPath: near clip plane
-      value: 0.03
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_Range
+      value: 6.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_SpotAngle
+      value: 75.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9109534648948034728, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
