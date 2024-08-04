@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     private float damage;
     private float bulletSpeed;
     private GameObject shotBy;
+    private float shootDistance;
 
     private void Update()
     {
@@ -19,15 +20,16 @@ public class Bullet : MonoBehaviour
         StartCoroutine(DestroyBullet());
     }
 
-    public void SetStartParameters(GameObject shotBy, Vector3 targetPosition, float damage, float bulletSpeed)
+    public void SetStartParameters(GameObject shotBy, Vector3 targetPosition, float damage, float bulletSpeed, float shootDistance = 0.1f)
     {
         this.shotBy = shotBy;
         this.targetPosition = targetPosition;
         this.damage = damage;
         this.bulletSpeed = bulletSpeed;
+        this.shootDistance = shootDistance;
 
         // This just gets it out of hitting walls or whatever for painting things
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, shootDistance);
     }
 
     private void StepToPosition()
