@@ -9,7 +9,6 @@ public class Anomaly : LivingObject
     [SerializeField] protected float bulletOffsetSpawnDistance = 0.1f;
     [HideInInspector] public Bullet bulletPrefab;
 
-
     private Bullet currentBullet;
     public bool isEnabled;
 
