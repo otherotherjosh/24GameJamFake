@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using DG.Tweening;
 
 public class FollowAnomaly : Anomaly
 {
@@ -20,8 +21,8 @@ public class FollowAnomaly : Anomaly
 
     private IEnumerator FollowPlayer()
     {
-        while (isEnabled) 
-        { 
+        while (isEnabled)
+        {
             yield return null;
 
             if (!Physics.Linecast(transform.position + new Vector3(0, 1, 0), player.transform.position + new Vector3(0, 1, 0), ~rayIgnoreMask))
@@ -43,8 +44,18 @@ public class FollowAnomaly : Anomaly
 
     protected override void OnDeath()
     {
-        base.OnDeath();
+        isEnabled = false;
+        audioSource.PlayOneShot(deathSound);
+        transform.LookAt(player.transform.position);
+        transform.DOLocalRotate(new Vector3(-90, transform.localEulerAngles.y), 1)
+            .SetEase(Ease.OutExpo)
+            .onComplete = Disable;
+    }
 
+    void Disable()
+    {
+        AnomalyManager.Instance.DisableAnomaly(GetComponent<Anomaly>());
+        gameObject.SetActive(false);
         transform.position = spawnTransform.position;
     }
 }
