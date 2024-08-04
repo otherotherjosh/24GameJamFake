@@ -55,6 +55,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootHeightOffset: 0
   bulletPrefab: {fileID: 0}
+  isEnabled: 0
   normalPaintingImage: {fileID: 2100000, guid: 0de589192017db44289f183211e5a841, type: 2}
   anomalyPaintingImage: {fileID: 2100000, guid: 836692d0b2a988547bd320621e3f82e3, type: 2}
   imageMesh: {fileID: 5626427130240715439}
@@ -92,8 +93,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -137,7 +138,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
