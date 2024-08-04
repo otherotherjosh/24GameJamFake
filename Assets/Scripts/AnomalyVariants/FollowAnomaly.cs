@@ -12,7 +12,8 @@ public class FollowAnomaly : Anomaly
     [SerializeField] private float followSpeed;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private LayerMask rayIgnoreMask;
-
+    [SerializeField] private Anomaly mySon;
+ 
     public override void AnomalyBehaviour()
     {
         StartCoroutine(FollowPlayer());
@@ -44,6 +45,7 @@ public class FollowAnomaly : Anomaly
 
     protected override void OnDeath()
     {
+        AnomalyManager.Instance.AddAnomalyToList(mySon);
         isEnabled = false;
         AnomalyManager.Instance.DisableAnomaly(GetComponent<Anomaly>());
         transform.LookAt(player.transform.position);

@@ -91,4 +91,7 @@ public class AnomalyManager : MonoBehaviour
             GameManager.Instance.EndGame();
         }
     }
+
+    public void AddAnomalyToList(Anomaly anomaly)
+    => anomalies.Add(anomaly);
 }
