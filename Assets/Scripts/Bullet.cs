@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
         this.bulletSpeed = bulletSpeed;
 
         // This just gets it out of hitting walls or whatever for painting things
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 1);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
     }
 
     private void StepToPosition()
