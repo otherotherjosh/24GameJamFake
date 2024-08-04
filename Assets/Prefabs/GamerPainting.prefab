@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1732318783145435993}
   - component: {fileID: 4356519748554948051}
   m_Layer: 0
-  m_Name: ChristianPainting
+  m_Name: GamerPainting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
