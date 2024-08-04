@@ -45,7 +45,7 @@ public class FollowAnomaly : Anomaly
     protected override void OnDeath()
     {
         isEnabled = false;
-        audioSource.PlayOneShot(deathSound);
+        AnomalyManager.Instance.DisableAnomaly(GetComponent<Anomaly>());
         transform.LookAt(player.transform.position);
         transform.DOLocalRotate(new Vector3(-90, transform.localEulerAngles.y), 1)
             .SetEase(Ease.OutExpo)
@@ -54,7 +54,6 @@ public class FollowAnomaly : Anomaly
 
     void Disable()
     {
-        AnomalyManager.Instance.DisableAnomaly(GetComponent<Anomaly>());
         gameObject.SetActive(false);
         transform.position = spawnTransform.position;
     }

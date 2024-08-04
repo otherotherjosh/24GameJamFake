@@ -48,18 +48,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03abdbbc821701e4fb1556b266c144d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 5
   damage: 10
   fireRate: 10
   bulletSpeed: 5
   player: {fileID: 0}
   shootHeightOffset: 0
+  deathSound: {fileID: 8300000, guid: 45ba6913c8ae8a44cbbd5af6a2ff660d, type: 3}
+  bulletOffsetSpawnDistance: 0.1
   bulletPrefab: {fileID: 0}
   isEnabled: 0
   normalPaintingImage: {fileID: 2100000, guid: 0de589192017db44289f183211e5a841, type: 2}
   anomalyPaintingImage: {fileID: 2100000, guid: 836692d0b2a988547bd320621e3f82e3, type: 2}
   imageMesh: {fileID: 5626427130240715439}
-  deathSound: {fileID: 8300000, guid: 45ba6913c8ae8a44cbbd5af6a2ff660d, type: 3}
 --- !u!65 &1732318783145435993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102,7 +112,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 5
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0

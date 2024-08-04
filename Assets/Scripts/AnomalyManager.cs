@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO.Pipes;
 using System.Threading;
 using NUnit.Framework;
 using Unity.VisualScripting;
@@ -73,9 +74,14 @@ public class AnomalyManager : MonoBehaviour
         anomalies.Remove(anomalyToEnable);
     }
 
-    public void DisableAnomaly(Anomaly anomalyToDisable)
+    public void DisableAnomaly(Anomaly anomaly)
     {
-        activeAnomalies.Remove(anomalyToDisable);
+        Debug.Log($"{anomaly.name} is disabled");
+        activeAnomalies.Remove(anomaly);
+        if (anomaly.deathSound != null)
+            AudioSource.PlayClipAtPoint(anomaly.deathSound, anomaly.transform.position);
+        else
+            AudioSource.PlayClipAtPoint(defaultDeathSound, anomaly.transform.position);
     }
 
     private void CheckAnomalyCount()

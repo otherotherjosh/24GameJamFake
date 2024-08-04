@@ -9212,7 +9212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e5b1c1674115524e8cdb0bbc6cb73fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDeathSound: {fileID: 0}
+  defaultDeathSound: {fileID: 8300000, guid: 45ba6913c8ae8a44cbbd5af6a2ff660d, type: 3}
   anomalies:
   - {fileID: 1724509720792745345}
   - {fileID: 1360287493}
@@ -10922,7 +10922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1528771661
 Transform:
   m_ObjectHideFlags: 0
@@ -14825,10 +14825,6 @@ PrefabInstance:
     - target: {fileID: 918815547149524070, guid: 16c79a63456e255468ecb718c100a732, type: 3}
       propertyPath: m_Name
       value: GamerPainting
-      objectReference: {fileID: 0}
-    - target: {fileID: 4356519748554948051, guid: 16c79a63456e255468ecb718c100a732, type: 3}
-      propertyPath: MinDistance
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5022762354710250486, guid: 16c79a63456e255468ecb718c100a732, type: 3}
       propertyPath: player
