@@ -197,6 +197,7 @@ MonoBehaviour:
   recoilPrefab: {fileID: 82735860467237711, guid: f7f59d586c129224da914ab2d87e4993, type: 3}
   bulletHolePrefab: {fileID: 4463130769545343402, guid: 00cf8317a57725f4f8fa8d991753370d, type: 3}
   maxBulletHoles: 32
+  scaleVariation: 0
   gunshot: {fileID: 8300000, guid: c59c7506c5feca841b693b6615c9ef2a, type: 3}
   gunshotVariation: 0.0502
   playerCamera: {fileID: 0}
@@ -231,7 +232,7 @@ Transform:
   m_GameObject: {fileID: 2893661565376030556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -292,8 +293,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.8
-  m_Radius: 0.4
+  m_Height: 1.6
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -311,6 +312,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ba002a36df364b8185422db81bde3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 100
   damage: 10
   fireRate: 5

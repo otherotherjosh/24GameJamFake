@@ -9,7 +9,7 @@ public class AnomalyManager : MonoBehaviour
 {
     public static AnomalyManager Instance;
 
-    //list
+    [SerializeField] private AudioClip defaultDeathSound;
     [SerializeField] private List<Anomaly> anomalies = new List<Anomaly>();
     [SerializeField] private float maxTimeBetweenSpawn;
     [SerializeField] private float minTimeBetweenSpawn;
