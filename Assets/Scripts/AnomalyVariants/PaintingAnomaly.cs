@@ -17,11 +17,11 @@ public class PaintingAnomaly : Anomaly
         imageMesh.material = anomalyPaintingImage;
     }
 
-    protected override void OnDeath()
+    protected override void Die()
     {
         if (!isEnabled) return;
 
-        base.OnDeath();
+        base.Die();
         gameObject.SetActive(true);
         imageMesh.material = normalPaintingImage;
     }

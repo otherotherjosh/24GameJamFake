@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1059677652563337723
 Transform:
   m_ObjectHideFlags: 0
@@ -242,15 +242,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6006225bd5d53409c3073726427037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  deathSound: {fileID: 8300000, guid: 15127f16425ea4f4e9fbab3e508440c1, type: 3}
   maxHealth: 50
   damage: 5
-  fireRate: 10
+  timeBetweenShots: 1
   bulletSpeed: 20
   player: {fileID: 0}
   shootHeightOffset: 1
+  bulletOffsetSpawnDistance: 0.1
   bulletPrefab: {fileID: 0}
+  isEnabled: 0
   spawnTransform: {fileID: 0}
-  distanceFromPlayer: 5
+  distanceFromPlayer: 1.5
   followSpeed: 2.5
   rotateSpeed: 0.5
   rayIgnoreMask:
@@ -1979,17 +1991,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound Emitter
       objectReference: {fileID: 0}
+    - target: {fileID: 4602078263065648839, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602078263065648839, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fe893e8eda5e0c4db46ccb87b11e4b6, type: 3}
+    - target: {fileID: 4602078263065648839, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
+      propertyPath: MaxDistance
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602078263065648839, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fe893e8eda5e0c4db46ccb87b11e4b6, type: 3}
+    - target: {fileID: 4602078263065648839, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8124923937339260919, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.321041
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8124923937339260919, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.065066
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8124923937339260919, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.8467546
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8124923937339260919, guid: a20b0f243948cd14abb205f0e21e335c, type: 3}
       propertyPath: m_LocalRotation.w

@@ -1,12 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class Anomaly : LivingObject
 {
     [SerializeField] protected GameObject player;
     [SerializeField] private float shootHeightOffset;
-    [SerializeField] protected AudioClip deathSound;
     [SerializeField] protected float bulletOffsetSpawnDistance = 0.1f;
     [HideInInspector] public Bullet bulletPrefab;
     protected AudioSource audioSource;
@@ -18,14 +16,10 @@ public class Anomaly : LivingObject
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Start()
+    protected override void Die()
     {
-        OnDie.AddListener(OnDeath);
-    }
-
-    protected virtual void OnDeath()
-    {
-        audioSource.PlayOneShot(deathSound);
+        base.Die();
+        Debug.Log($"{name} (ANOMALY) is dying!");
         AnomalyManager.Instance.DisableAnomaly(this);
         StopCoroutine(ShootLoop());
         gameObject.SetActive(false);
@@ -45,7 +39,7 @@ public class Anomaly : LivingObject
     {
         while (isEnabled)
         {
-            yield return new WaitForSeconds(fireRate);
+            yield return new WaitForSeconds(timeBetweenShots);
             ShootPlayer();
         }
     }

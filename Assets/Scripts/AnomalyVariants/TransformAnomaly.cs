@@ -32,10 +32,13 @@ public class TransformAnomaly : Anomaly
         .onComplete = () => { if (isTransforming) isTransforming = false; };
     }
 
-    protected override void OnDeath()
-    => StartCoroutine(Die());
+    protected override void Die()
+    {
+        base.Die();
+        StartCoroutine(ResetToOriginal());
+    }
 
-    IEnumerator Die()
+    IEnumerator ResetToOriginal()
     {
         isTransforming = true;
         TransformOverTime(
@@ -48,6 +51,6 @@ public class TransformAnomaly : Anomaly
         yield return new WaitUntil(() => !isTransforming);
 
         originalObject.SetActive(true);
-        base.OnDeath();
+        base.Hurt();
     }
 }

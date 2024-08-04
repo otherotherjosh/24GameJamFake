@@ -66,15 +66,18 @@ public class PlayerGun : MonoBehaviour
     void PlantBulletHole(RaycastHit hit)
     {
         bulletHolesIndex %= maxBulletHoles;
-        bulletHoles[bulletHolesIndex].transform.position = hit.point;
-        bulletHoles[bulletHolesIndex].transform.up = hit.normal;
-        bulletHoles[bulletHolesIndex].SetActive(true);
-        bulletHoles[bulletHolesIndex].transform.parent = hit.transform;
-        bulletHoles[bulletHolesIndex].transform.localScale = Vector3.one + new Vector3(
+        GameObject bulletHole = bulletHoles[bulletHolesIndex];
+        bulletHole.transform.position = hit.point;
+        bulletHole.transform.up = hit.normal;
+        bulletHole.SetActive(true);
+        bulletHole.transform.parent = hit.transform;
+        Debug.Log($"{bulletHole.name} world scale: {bulletHole.transform.lossyScale.x}");
+        bulletHole.transform.localScale = Vector3.one
+        + new Vector3(
             Random.Range(-scaleVariation, scaleVariation) / 2,
             Random.Range(-scaleVariation, scaleVariation) / 2,
             0
-        );
+        ) ;
         bulletHolesIndex++;
     }
 

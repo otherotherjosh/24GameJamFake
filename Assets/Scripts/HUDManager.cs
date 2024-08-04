@@ -32,16 +32,16 @@ public class HUDManager : MonoBehaviour
     private void Start()
     {
         player.OnHurt.AddListener(ChangeHealth);
-        ChangeHealth();
+        ChangeHealth(player);
     }
 
     private void OnEnable()
     {
         healthBar = hud.Q<ProgressBar>(healthBarElementName);
-        ChangeHealth();
+        ChangeHealth(player);
     }
 
-    private void ChangeHealth()
+    private void ChangeHealth(LivingObject livingObject)
     {
         healthBar.value = player.Health;
     }

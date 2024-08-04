@@ -42,13 +42,17 @@ public class FollowAnomaly : Anomaly
         }
     }
 
-    protected override void OnDeath()
+    protected override void Die()
     {
         isEnabled = false;
-        audioSource.PlayOneShot(deathSound);
+        SoundEmitter emitter = GetComponentInChildren<SoundEmitter>();
+        emitter.Stop();
         transform.LookAt(player.transform.position);
         transform.DOLocalRotate(new Vector3(-90, transform.localEulerAngles.y), 1)
             .SetEase(Ease.OutExpo)
+            .onComplete = () =>
+        transform.DOScale(Vector3.zero, 1)
+            .SetEase(Ease.InExpo)
             .onComplete = Disable;
     }
 

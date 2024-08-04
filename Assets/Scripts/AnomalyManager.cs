@@ -15,10 +15,10 @@ public class AnomalyManager : MonoBehaviour
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private AudioClip shootSound;
-    private List<Anomaly> activeAnomalies = new List<Anomaly>();
     [SerializeField] private float initialGracePeriod;
     [SerializeField] private int anomalyLoseCount;
 
+    private List<Anomaly> activeAnomalies = new List<Anomaly>();
     private float lastSpawnTime;
     private float spawnCooldown;
 
@@ -31,10 +31,6 @@ public class AnomalyManager : MonoBehaviour
         }
 
         Instance = this;
-    }
-
-    void Start()
-    {
         lastSpawnTime = Time.time;
         spawnCooldown = initialGracePeriod;
     }
@@ -53,7 +49,8 @@ public class AnomalyManager : MonoBehaviour
         spawnCooldown = Random.Range(minTimeBetweenSpawn, maxTimeBetweenSpawn);
         lastSpawnTime = Time.time;
         int selection = Random.Range(0, anomalies.Count - 1);
-        if(anomalies.Count != 0){
+        if (anomalies.Count != 0)
+        {
             EnableAnomaly(anomalies[selection]);
             Debug.Log("Enabled en enomaly");
             CheckAnomalyCount();
@@ -64,13 +61,14 @@ public class AnomalyManager : MonoBehaviour
         }
     }
 
-    public void EnableAnomaly(Anomaly anomalyToEnable)
+    public void EnableAnomaly(Anomaly anomaly)
     {
-        anomalyToEnable.bulletPrefab = bulletPrefab;
-        anomalyToEnable.gameObject.SetActive(true);
-        activeAnomalies.Add(anomalyToEnable);
-        anomalyToEnable.StartAnomaly();
-        anomalies.Remove(anomalyToEnable);
+        anomaly.bulletPrefab = bulletPrefab;
+        anomaly.gameObject.SetActive(true);
+        activeAnomalies.Add(anomaly);
+        anomaly.OnDie.AddListener(HandleAnomalyDeath);
+        anomaly.StartAnomaly();
+        anomalies.Remove(anomaly);
     }
 
     public void DisableAnomaly(Anomaly anomalyToDisable)
@@ -84,5 +82,20 @@ public class AnomalyManager : MonoBehaviour
         {
             GameManager.Instance.EndGame();
         }
+    }
+
+    void HandleAnomalyDeath(LivingObject deadObject)
+    {
+        Anomaly anomaly = deadObject.transform.GetComponent<Anomaly>();
+        Debug.Log($"{deadObject.name} is about to fuckin die");
+        activeAnomalies.Remove(anomaly);
+        GameManager.Instance.Points++;
+        if (deadObject.deathSound != null)
+            AudioSource.PlayClipAtPoint(deadObject.deathSound, deadObject.transform.position);
+    }
+
+    public void AddAnomalyToGame(Anomaly anomaly)
+    {
+        Debug.Log($"added {anomaly.name} to anomaly list");
     }
 }
