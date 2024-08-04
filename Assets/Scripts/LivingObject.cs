@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public abstract class LivingObject : MonoBehaviour
 {
     protected UnityEvent OnDie = new UnityEvent();
+    public UnityEvent OnHealthChange = new UnityEvent();
 
     private int health;
 
@@ -13,6 +14,7 @@ public abstract class LivingObject : MonoBehaviour
         get => health;
         set {
             health = Mathf.Clamp(value, 0, maxHealth);
+            OnHealthChange?.Invoke();
             if (health == 0)
             {
                 OnDie?.Invoke();

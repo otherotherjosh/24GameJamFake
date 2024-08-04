@@ -1258,6 +1258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 10
   damage: 10
   fireRate: 5
@@ -2895,6 +2898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21fe0fe709893648801edf2a261c7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 5
   damage: 0
   fireRate: 5
@@ -4446,6 +4452,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2893661565376030556, guid: a712292aa890ba740be11a7c840504ce, type: 3}
   m_PrefabInstance: {fileID: 1360620659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159957577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3536267653372172560, guid: a712292aa890ba740be11a7c840504ce, type: 3}
+  m_PrefabInstance: {fileID: 1360620659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159957575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536ba002a36df364b8185422db81bde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195201865
 GameObject:
   m_ObjectHideFlags: 0
@@ -5971,6 +5988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03abdbbc821701e4fb1556b266c144d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
   maxHealth: 5
   damage: 10
   fireRate: 10
@@ -8360,6 +8380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005125538}
   - component: {fileID: 2005125537}
+  - component: {fileID: 2005125539}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -8398,6 +8419,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005125539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005125536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4caa39064c62d4680109d1897a36ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarElementName: HealthBar
+  player: {fileID: 1159957577}
 --- !u!1001 &2071763837
 PrefabInstance:
   m_ObjectHideFlags: 0
