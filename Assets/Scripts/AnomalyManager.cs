@@ -14,6 +14,7 @@ public class AnomalyManager : MonoBehaviour
     [SerializeField] private float maxTimeBetweenSpawn;
     [SerializeField] private float minTimeBetweenSpawn;
     [SerializeField] private Bullet bulletPrefab;
+    [SerializeField] private AudioClip shootSound;
     private List<Anomaly> activeAnomalies = new List<Anomaly>();
     [SerializeField] private float initialGracePeriod;
     [SerializeField] private int anomalyLoseCount;
