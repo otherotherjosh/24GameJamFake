@@ -38,14 +38,15 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject == shotBy) return;
+    { 
+        // if shooting anomaly ignore and continue
+        if (collision.gameObject.GetComponentInParent<Anomaly>() != null) return;
 
-        LivingObject livingObject = collision.gameObject.GetComponentInParent<LivingObject>();
+        Player playerShot = collision.gameObject.GetComponentInParent<Player>();
 
-        if (livingObject != null)
+        if (playerShot != null)
         {
-            livingObject.Health -= Mathf.RoundToInt(damage);
+            playerShot.Health -= Mathf.RoundToInt(damage);
             //Debug.Log($"hit something with health health is now {livingObject.Health}");
         }
 

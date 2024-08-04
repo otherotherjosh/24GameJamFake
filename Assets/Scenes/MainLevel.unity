@@ -9748,7 +9748,7 @@ MonoBehaviour:
   player: {fileID: 1159957575}
   shootHeightOffset: 1
   deathSound: {fileID: 0}
-  bulletOffsetSpawnDistance: 0.8
+  bulletOffsetSpawnDistance: 0.1
   bulletPrefab: {fileID: 0}
   isEnabled: 0
   originalObject: {fileID: 46590308}
