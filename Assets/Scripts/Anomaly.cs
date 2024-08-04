@@ -7,6 +7,7 @@ public class Anomaly : LivingObject
     [SerializeField] protected GameObject player;
     [SerializeField] private float shootHeightOffset;
     [SerializeField] protected AudioClip deathSound;
+    [SerializeField] protected float bulletOffsetSpawnDistance = 0.1f;
     [HideInInspector] public Bullet bulletPrefab;
     protected AudioSource audioSource;
     private Bullet currentBullet;
@@ -54,7 +55,7 @@ public class Anomaly : LivingObject
         Vector3 shootPosition = new Vector3(transform.position.x, transform.position.y + shootHeightOffset, transform.position.z);
 
         currentBullet = Instantiate(bulletPrefab, shootPosition, Quaternion.identity);
-        currentBullet.SetStartParameters(gameObject, player.transform.position + (player.transform.position - shootPosition) * 20, damage, bulletSpeed);
+        currentBullet.SetStartParameters(gameObject, player.transform.position + (player.transform.position - shootPosition) * 20, damage, bulletSpeed, bulletOffsetSpawnDistance);
     }
 
     /// <summary>
