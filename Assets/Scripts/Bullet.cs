@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
         this.bulletSpeed = bulletSpeed;
 
         // This just gets it out of hitting walls or whatever for painting things
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 1);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 0.1f);
     }
 
     private void StepToPosition()
@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
         if (livingObject != null)
         {
             livingObject.Health -= Mathf.RoundToInt(damage);
-            Debug.Log($"hit something with health health is now {livingObject.Health}");
+            //Debug.Log($"hit something with health health is now {livingObject.Health}");
         }
 
         StopCoroutine(DestroyBullet());

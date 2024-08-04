@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private float cameraTargetHeight;
     private Camera cam;
     private float jumpInputTime;
+    private bool canMove = true;
+    public bool CanMove { get => canMove; set => canMove = value; }
 
     void Awake()
     {
@@ -45,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!canMove) return;
+
         AddWalkVector();
         AddGravityVector();
         AddJumpVector();

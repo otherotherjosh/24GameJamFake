@@ -10,6 +10,8 @@ public class HUDManager : MonoBehaviour
 
     [SerializeField] private string healthBarElementName;
     [SerializeField] private Player player;
+    [SerializeField] private Color healthBarBackgroundColour;
+    [SerializeField] private Color healthBarProgressColour;
 
     private VisualElement hud;
     private ProgressBar healthBar;
@@ -29,7 +31,8 @@ public class HUDManager : MonoBehaviour
 
     private void Start()
     {
-        player.OnHealthChange.AddListener(ChangeHealth);
+        player.OnHurt.AddListener(ChangeHealth);
+        ChangeHealth();
     }
 
     private void OnEnable()

@@ -15,6 +15,8 @@ public class PlayerGun : MonoBehaviour
     [HideInInspector] public Transform playerCamera;
     [HideInInspector] public int damage;
 
+    private bool canGun = true;
+    public bool CanGun { get => canGun; set => canGun = value; }
 
     private GameObject[] bulletHoles;
     private int bulletHolesIndex;
@@ -34,6 +36,8 @@ public class PlayerGun : MonoBehaviour
 
     private void Gun()
     {
+        if (!canGun) return;
+
         audioSource.pitch = UnityEngine.Random.Range(1 - gunshotVariation / 2, 1 + gunshotVariation / 2);
         audioSource.PlayOneShot(gunshot);
 

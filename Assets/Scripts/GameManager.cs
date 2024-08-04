@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    
+    [SerializeField] private Player player;
+    public Player Player { get => player; }
 
     private int points = 0;
     public int Points { get => points; set => points = value; }
@@ -22,6 +25,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        player.OnDie.AddListener(EndGame);
+    }
+
+    public void EndGame()
+    {
+        player.OnDeath();
+        Debug.Log("womp womp");
     }
 }
