@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
+// using System;
 
 public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private GameObject recoilPrefab;
     [SerializeField] private GameObject bulletHolePrefab;
     [SerializeField] private int maxBulletHoles;
+    [SerializeField][Range(0, 1)] private float scaleVariation;
     [Header("Sounds")]
     [SerializeField] private AudioClip gunshot;
-    [SerializeField][Range(0, 0.1f)] private float gunshotVariation;
+    [SerializeField] private float gunshotVariation;
 
     [HideInInspector] public Transform playerCamera;
     [HideInInspector] public int damage;
+
 
     private GameObject[] bulletHoles;
     private int bulletHolesIndex;
@@ -64,6 +66,11 @@ public class PlayerGun : MonoBehaviour
         bulletHoles[bulletHolesIndex].transform.up = hit.normal;
         bulletHoles[bulletHolesIndex].SetActive(true);
         bulletHoles[bulletHolesIndex].transform.parent = hit.transform;
+        bulletHoles[bulletHolesIndex].transform.localScale = Vector3.one + new Vector3(
+            Random.Range(-scaleVariation, scaleVariation) / 2,
+            Random.Range(-scaleVariation, scaleVariation) / 2,
+            0
+        );
         bulletHolesIndex++;
     }
 
