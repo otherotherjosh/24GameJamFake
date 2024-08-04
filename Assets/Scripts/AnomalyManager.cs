@@ -16,6 +16,7 @@ public class AnomalyManager : MonoBehaviour
     [SerializeField] private Bullet bulletPrefab;
     private List<Anomaly> activeAnomalies = new List<Anomaly>();
     [SerializeField] private float initialGracePeriod;
+    [SerializeField] private int anomalyLoseCount;
 
     private float lastSpawnTime;
     private float spawnCooldown;
@@ -54,10 +55,11 @@ public class AnomalyManager : MonoBehaviour
         if(anomalies.Count != 0){
             EnableAnomaly(anomalies[selection]);
             Debug.Log("Enabled en enomaly");
+            CheckAnomalyCount();
         }
         else
         {
-            Debug.Log("All anomalies have been enabled");
+            //Debug.Log("All anomalies have been enabled");
         }
     }
 
@@ -73,5 +75,13 @@ public class AnomalyManager : MonoBehaviour
     public void DisableAnomaly(Anomaly anomalyToDisable)
     {
         activeAnomalies.Remove(anomalyToDisable);
+    }
+
+    private void CheckAnomalyCount()
+    {
+        if (anomalies.Count >= anomalyLoseCount)
+        {
+            GameManager.Instance.EndGame();
+        }
     }
 }

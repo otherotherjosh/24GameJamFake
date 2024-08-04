@@ -1258,7 +1258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978188aeb9240f743a2689efed90b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHealthChange:
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: 10
@@ -2898,7 +2904,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21fe0fe709893648801edf2a261c7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHealthChange:
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: 5
@@ -5597,6 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2415d246454a44595e61dae09dea96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1159957577}
 --- !u!1 &1311784919
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,6 +5648,7 @@ MonoBehaviour:
   minTimeBetweenSpawn: 3
   bulletPrefab: {fileID: 5287270984546509733, guid: 027c124889234b9419963a8902647038, type: 3}
   initialGracePeriod: 0
+  anomalyLoseCount: 5
 --- !u!4 &1311784921
 Transform:
   m_ObjectHideFlags: 0
@@ -5988,7 +6002,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03abdbbc821701e4fb1556b266c144d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHealthChange:
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
     m_PersistentCalls:
       m_Calls: []
   maxHealth: 5

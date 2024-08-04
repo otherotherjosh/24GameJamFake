@@ -29,7 +29,7 @@ public class HUDManager : MonoBehaviour
 
     private void Start()
     {
-        player.OnHealthChange.AddListener(ChangeHealth);
+        player.OnHurt.AddListener(ChangeHealth);
     }
 
     private void OnEnable()

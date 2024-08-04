@@ -16,6 +16,9 @@ public class PlayerRotation : MonoBehaviour
     private InputAction lookAction;
     private float yaw;
 
+    private bool canMove = true;
+    public bool CanMove { get => canMove; set => canMove = value; }
+
     void Awake()
     {
         Cursor.lockState = lockCursor ? CursorLockMode.Locked : CursorLockMode.None;
@@ -30,6 +33,8 @@ public class PlayerRotation : MonoBehaviour
 
     void Update()
     {
+        if (!canMove) return;
+
         Vector2 lookInput = lookAction.ReadValue<Vector2>() * lookSensitivity;
 
         // rotate character horizontally (around the Y axis)

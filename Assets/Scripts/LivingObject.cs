@@ -5,20 +5,21 @@ using UnityEngine.Events;
 
 public abstract class LivingObject : MonoBehaviour
 {
-    protected UnityEvent OnDie = new UnityEvent();
-    public UnityEvent OnHealthChange = new UnityEvent();
+    public UnityEvent OnDie = new UnityEvent();
+    public UnityEvent OnHeal = new UnityEvent();
+    public UnityEvent OnHurt = new UnityEvent();
 
     private int health;
 
     public int Health {
         get => health;
         set {
+            int oldHealth = health;   
+
             health = Mathf.Clamp(value, 0, maxHealth);
-            OnHealthChange?.Invoke();
-            if (health == 0)
-            {
-                OnDie?.Invoke();
-            }
+            if (health == 0) OnDie?.Invoke();
+            if (oldHealth > health) OnHurt?.Invoke();
+            if (oldHealth < health) OnHeal?.Invoke();
         }
     }
 
